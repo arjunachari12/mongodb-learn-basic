@@ -17,4 +17,10 @@ db.employee.insertOne({"id":1,"name":"arjun","age":30,"isStudent":true,"address"
 
 db.student.insertOne({"_id":1,"name":"arjun","age":30,"isStudent":true,"address":{"street":"2nd","city":"bangalore","country":"india"},"hobbies":["football","program"]})
 
+db.mycollection2.insertOne({ name: "arjun", age: 30 })
+
+db.mycollection2.updateOne({ name: "arjun" },{ $set: { age: 35 }})
+
+db.mycollection2.find()
+
 ```
