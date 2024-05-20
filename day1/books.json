@@ -1,0 +1,21 @@
+{
+  "title": "harry potter",
+  "author": "J. K. Rowling",
+  "published_year": 1997,
+  "publiser": {
+    "name": "Pottermore",
+    "location": "Bengaluru"
+  },
+  "reviews": [
+    {
+      "reviewer": "john",
+      "rating": 5,
+      "comment": "awesome"
+    },
+    {
+      "reviewer": "david",
+      "rating": 5,
+      "comment": "excellent"
+    }
+  ]
+}
