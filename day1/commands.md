@@ -27,5 +27,9 @@ db.employee.updateOne({_id: 1}, {$set: {"address.street": "3rd", hobbies: ["foot
 
 db.employee.updateOne({name: 'arjun'}, {$set: {"address.street": "4th", hobbies: ["football", "cricket", "swimming"]}})
 
-db.student.updateOne({ _id: 1 },{ $set: { "hobbies.0": "hockey" } } )
+db.employee.updateOne({ _id: 1 },{ $set: { "hobbies.0": "hockey" } } )
+
+db.employee.deleteOne({ _id: 1 })
+
+db.dropDatabase()
 ```
