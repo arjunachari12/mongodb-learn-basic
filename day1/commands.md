@@ -24,4 +24,8 @@ db.mycollection2.updateOne({ name: "arjun" },{ $set: { age: 35 }})
 db.mycollection2.find()
 
 db.employee.updateOne({_id: 1}, {$set: {"address.street": "3rd", hobbies: ["football", "cricket"]}})
+
+db.employee.updateOne({name: 'arjun'}, {$set: {"address.street": "4th", hobbies: ["football", "cricket", "swimming"]}})
+
+db.student.updateOne({ _id: 1 },{ $set: { "hobbies.0": "hockey" } } )
 ```
