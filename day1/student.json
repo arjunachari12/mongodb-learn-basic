@@ -1,0 +1,12 @@
+{
+    "id": 1,
+    "name": "arjun",
+    "age": 30,
+    "isStudent": true,
+    "address": {
+        "street": "2nd",
+        "city": "bangalore",
+        "country": "india"
+    },
+    "hobbies": ["football", "program"] 
+}
