@@ -66,6 +66,9 @@ db.products.find({ price: { $gte: 50, $lte: 500 } }).pretty()
 
 db.products.find({ $and: [{ category: "Electronics" }, { stock: { $gt: 100 } }] }).pretty()
 
+db.products.find({ $or: [{ category: "Electronics" }, { stock: { $lt: 50 } }] }).pretty()
+
+
 
 ================================
 
