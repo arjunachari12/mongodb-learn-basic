@@ -53,4 +53,7 @@ db.products.insertMany([
 =============================
 db.products.updateMany({ category: "Electronics" },{ $set: { stock: 20 }})
 
+================================
+db.products.deleteMany({ category: "Electronics" })
+
 ````
