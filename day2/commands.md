@@ -78,6 +78,10 @@ db.products.find({ tags: { $all: ["mobile", "communication"] } }).pretty()
 
 db.products.find({ "details.brand": "BrandZ" })
 
+db.products.find({ name: { $regex: /phone/i } }).pretty()
+
+db.products.find({}, { name: 1, price: 1, _id: 0 }).pretty()
+
 ================================
 
 ````
