@@ -92,4 +92,16 @@ db.products.countDocuments({ category: "Electronics" })
 
 ================================
 
+Group By: Group the documents by category and calculate the total stock for each category.
+
+db.products.aggregate([
+    {
+        $group: {
+            _id: "$category",
+            totalStock: { $sum: "$stock" }
+        }
+    }
+])
+
+
 ````
