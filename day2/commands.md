@@ -76,6 +76,8 @@ db.products.find({ tags: "mobile" }).pretty()
 
 db.products.find({ tags: { $all: ["mobile", "communication"] } }).pretty()
 
+db.products.find({ "details.brand": "BrandZ" })
+
 ================================
 
 ````
