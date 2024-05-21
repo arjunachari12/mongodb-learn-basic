@@ -82,6 +82,14 @@ db.products.find({ name: { $regex: /phone/i } }).pretty()
 
 db.products.find({}, { name: 1, price: 1, _id: 0 }).pretty()
 
+db.products.find().sort({ price: 1 }).pretty()
+
+db.products.find().limit(2).pretty()
+
+db.products.countDocuments()
+
+db.products.countDocuments({ category: "Electronics" })
+
 ================================
 
 ````
