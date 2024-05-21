@@ -68,7 +68,13 @@ db.products.find({ $and: [{ category: "Electronics" }, { stock: { $gt: 100 } }] 
 
 db.products.find({ $or: [{ category: "Electronics" }, { stock: { $lt: 50 } }] }).pretty()
 
+db.products.find({ age: { $exists: true }})
 
+db.products.find({ tags: { $exists: true }})
+
+db.products.find({ tags: "mobile" }).pretty()
+
+db.products.find({ tags: { $all: ["mobile", "communication"] } }).pretty()
 
 ================================
 
