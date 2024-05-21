@@ -60,4 +60,13 @@ db.products.deleteMany({ category: "Electronics" })
 
 db.products.find({ price: { $gt: 100 } })
 
+db.products.find({ stock: { $lte: 50 } }).pretty()
+
+db.products.find({ price: { $gte: 50, $lte: 500 } }).pretty()
+
+db.products.find({ $and: [{ category: "Electronics" }, { stock: { $gt: 100 } }] }).pretty()
+
+
+================================
+
 ````
