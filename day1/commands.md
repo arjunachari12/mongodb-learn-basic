@@ -1,5 +1,5 @@
 ```
-show bds
+show dbs
 
 use admin
 
