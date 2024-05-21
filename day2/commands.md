@@ -104,4 +104,16 @@ db.products.aggregate([
 ])
 
 
+Group the documents by category and calculate the average price for each category.
+
+db.products.aggregate([
+    {
+        $group: {
+            _id: "$category",
+            averagePrice: { $avg: "$price" }
+        }
+    }
+])
+
+
 ````
