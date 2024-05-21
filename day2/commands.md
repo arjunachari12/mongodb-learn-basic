@@ -56,4 +56,8 @@ db.products.updateMany({ category: "Electronics" },{ $set: { stock: 20 }})
 ================================
 db.products.deleteMany({ category: "Electronics" })
 
+========================
+
+db.products.find({ price: { $gt: 100 } })
+
 ````
