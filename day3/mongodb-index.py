@@ -1,3 +1,4 @@
+
 from pymongo import MongoClient, ASCENDING, DESCENDING
 from pprint import pprint
 
@@ -85,10 +86,16 @@ data = [
     }
 ]
 
+# Insert sample data into MongoDB
+products.delete_many({})  # Clear existing data
 products.insert_many(data)
 
+# Create indexes
 products.create_index([("category", ASCENDING)])
+products.create_index([("category", ASCENDING), ("price", DESCENDING)])
+products.create_index([("reviews.username", ASCENDING)])
 
+# Sample queries and explain plans
 def query_and_explain(filter_query, sort_query=None):
     explain_options = {"verbosity": "executionStats"}  # Specify options as a dictionary
     cursor = products.find(filter_query)
@@ -96,3 +103,19 @@ def query_and_explain(filter_query, sort_query=None):
         cursor = cursor.sort(sort_query)
     result = cursor.explain()
     pprint(result)
+
+
+# Query: Find all electronics products
+print("Query: Find all electronics products")
+query_and_explain({"category": "Electronics"})
+
+# Query: Find all electronics products sorted by price in descending order
+print("\nQuery: Find all electronics products sorted by price in descending order")
+query_and_explain({"category": "Electronics"}, [("price", DESCENDING)])
+
+# Query: Find reviews by user123
+print("\nQuery: Find reviews by user123")
+query_and_explain({"reviews.username": "user123"})
+
+# Close the connection
+client.close()
