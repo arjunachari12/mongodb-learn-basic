@@ -88,3 +88,11 @@ data = [
 products.insert_many(data)
 
 products.create_index([("category", ASCENDING)])
+
+def query_and_explain(filter_query, sort_query=None):
+    explain_options = {"verbosity": "executionStats"}  # Specify options as a dictionary
+    cursor = products.find(filter_query)
+    if sort_query:
+        cursor = cursor.sort(sort_query)
+    result = cursor.explain()
+    pprint(result)
