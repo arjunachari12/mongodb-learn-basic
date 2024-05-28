@@ -14,6 +14,8 @@ rs.initiate({
   ]
 })
 
+rs.status()
+
 
 
 
