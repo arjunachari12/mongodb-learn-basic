@@ -19,6 +19,16 @@ rs.status()
 use testDB
 db.testCollection.insert({ name: "testDocument" })
 
+# Open in another terminal to validate the data
+mongosh --port 27018
+use testDB
+db.testCollection.find()
+
+mongosh --port 27019
+use testDB
+db.testCollection.find()
+
+
 
 
 
