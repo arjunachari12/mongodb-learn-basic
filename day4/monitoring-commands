@@ -1,0 +1,6 @@
+```
+db.stats(): Provides statistics about the database.
+db.serverStatus(): Offers detailed information about the server's status.
+rs.status(): Displays the status of the replica set.
+
+```
