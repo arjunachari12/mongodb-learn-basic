@@ -16,7 +16,6 @@ rs.initiate({
 
 rs.status()
 
-mongosh --port 27017
 use testDB
 db.testCollection.insert({ name: "testDocument" })
 
